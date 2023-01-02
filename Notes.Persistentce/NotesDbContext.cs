@@ -12,7 +12,7 @@ namespace Notes.Persistentce
         public NotesDbContext(DbContextOptions<NotesDbContext> options) : 
             base(options) { }
         
-        protected void OnModelCreation(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfiguration(new NoteConfiguration());
             base.OnModelCreating(builder);
